@@ -1,0 +1,17 @@
+{
+	"version":"2.0.0",
+	"kind":"DataIntegrationJob",
+	"spec":{
+		"dataIntegrationJobs":[
+			{
+				"logicalName":"batch_sync_member_store_item:58cce93e",
+				"name":"batch_sync_member_store_item",
+				"script":{
+					"runtime":{
+						"command":"FULL_AND_OFFLINE_INCREMENTAL"
+					}
+				}
+			}
+		]
+	}
+}
