@@ -1,0 +1,12 @@
+# BEGIN DATAWORKS RESOURCE LFS
+.gitattributes -filter
+DATAWORKS_CYCLE_WORKFLOW/batch_sync_supplier/batch_sync_supplier.json -filter
+DATAWORKS_CYCLE_WORKFLOW/batch_sync_supplier/batch_sync_supplier.spec.json -filter
+DATAWORKS_CYCLE_WORKFLOW/batch_sync_supplier/dataworks.properties -filter
+DATAWORKS_CYCLE_WORKFLOW/data_integration_jobs/mysql-odps/batch_sync_member_store_item/batch_sync_member_store_item.json -filter
+DATAWORKS_CYCLE_WORKFLOW/data_integration_jobs/mysql-odps/batch_sync_member_store_item/batch_sync_member_store_item.spec.json -filter
+DATAWORKS_CYCLE_WORKFLOW/data_integration_jobs/mysql-odps/batch_sync_member_store_item/dataworks.properties -filter
+DATAWORKS_CYCLE_WORKFLOW/data_integration_jobs/mysql-odps/rt_sync_sales_order/dataworks.properties -filter
+DATAWORKS_CYCLE_WORKFLOW/data_integration_jobs/mysql-odps/rt_sync_sales_order/rt_sync_sales_order.json -filter
+DATAWORKS_CYCLE_WORKFLOW/data_integration_jobs/mysql-odps/rt_sync_sales_order/rt_sync_sales_order.spec.json -filter
+# END DATAWORKS RESOURCE LFS

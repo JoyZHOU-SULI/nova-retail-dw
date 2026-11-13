@@ -1,0 +1,17 @@
+{
+	"version":"2.0.0",
+	"kind":"DataIntegrationJob",
+	"spec":{
+		"dataIntegrationJobs":[
+			{
+				"logicalName":"rt_sync_sales_order:4f839ec6",
+				"name":"rt_sync_sales_order",
+				"script":{
+					"runtime":{
+						"command":"FULL_AND_REALTIME_INCREMENTAL"
+					}
+				}
+			}
+		]
+	}
+}
