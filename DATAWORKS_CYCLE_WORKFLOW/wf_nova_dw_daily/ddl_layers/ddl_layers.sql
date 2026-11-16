@@ -4,40 +4,21 @@
 --create time: 2026-11-13 10:07:34
 --********************************************************************--
 -- ---------- Conformed dimensions ----------
--- ---------- Rebuild dimension tables (aligned with ODS types) ----------
--- DROP first: dim tables have no downstream dependency, safe to rebuild
-
-DROP TABLE IF EXISTS dim_store;
 CREATE TABLE IF NOT EXISTS dim_store (
-  store_id   BIGINT      COMMENT 'Store ID, primary key. FK target of dwd_order_detail.store_id',
-  store_name STRING      COMMENT 'Store name',
-  city       STRING      COMMENT 'City where the store operates',
-  region     STRING      COMMENT 'Region for geographic drill-down (e.g. East/Central/South/West)',
-  channel    STRING      COMMENT 'Sales channel: offline or online',
-  open_date  DATETIME    COMMENT 'Store opening date'
-) COMMENT 'Store conformed dimension. One row per store.'
-LIFECYCLE 1095;
+  store_id INT COMMENT 'Store ID',
+  store_name STRING, city STRING, region STRING,
+  channel STRING COMMENT 'offline/online', open_date DATETIME
+) COMMENT 'Conformed dimension: store' LIFECYCLE 1095;
 
-DROP TABLE IF EXISTS dim_member;
-CREATE TABLE IF NOT EXISTS dim_member (
-  member_id     BIGINT   COMMENT 'Member ID, primary key. FK target of dwd_order_detail.member_id',
-  member_name   STRING   COMMENT 'Member display name',
-  phone         STRING   COMMENT 'Member contact phone (plaintext; masked at query time by dynamic data-masking policy)',
-  city          STRING   COMMENT 'City of residence',
-  register_date DATETIME COMMENT 'Member registration date',
-  level         STRING   COMMENT 'Membership tier: V1-V5'
-) COMMENT 'Member conformed dimension. One row per member.'
-LIFECYCLE 1095;
-
-DROP TABLE IF EXISTS dim_item;
 CREATE TABLE IF NOT EXISTS dim_item (
-  item_id    BIGINT         COMMENT 'Item ID, primary key. FK target of dwd_order_detail.item_id',
-  item_name  STRING         COMMENT 'Item display name',
-  category   STRING         COMMENT 'Item category',
-  unit_price DECIMAL(38,18) COMMENT 'Retail price per unit',
-  cost_price DECIMAL(38,18) COMMENT 'Cost price per unit'
-) COMMENT 'Item conformed dimension. One row per item.'
-LIFECYCLE 1095;
+  item_id INT, item_name STRING, category STRING,
+  unit_price DECIMAL(38,18), cost_price DECIMAL(38,18)
+) COMMENT 'Conformed dimension: item' LIFECYCLE 1095;
+
+CREATE TABLE IF NOT EXISTS dim_member (
+  member_id BIGINT, member_name STRING, phone STRING COMMENT 'Plaintext phone, protected by dynamic masking rule',
+  city STRING, register_date DATETIME, level STRING
+) COMMENT 'Conformed dimension: member' LIFECYCLE 1095;
 
 -- ---------- DWD fact ----------
 CREATE TABLE IF NOT EXISTS dwd_order_detail (
