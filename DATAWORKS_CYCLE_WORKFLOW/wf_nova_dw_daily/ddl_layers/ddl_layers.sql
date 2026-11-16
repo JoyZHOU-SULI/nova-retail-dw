@@ -4,9 +4,6 @@
 --create time: 2026-11-13 10:07:34
 --********************************************************************--
 -- ---------- Conformed dimensions ----------
--- ---------- Rebuild dimension tables (aligned with ODS types) ----------
--- DROP first: dim tables have no downstream dependency, safe to rebuild
-
 DROP TABLE IF EXISTS dim_store;
 CREATE TABLE IF NOT EXISTS dim_store (
   store_id   BIGINT      COMMENT 'Store ID, primary key. FK target of dwd_order_detail.store_id',
