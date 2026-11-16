@@ -24,7 +24,6 @@ CREATE TABLE IF NOT EXISTS dim_member (
 ) COMMENT 'Member conformed dimension. One row per member.'
 LIFECYCLE 1095;
 
-DROP TABLE IF EXISTS dim_item;
 CREATE TABLE IF NOT EXISTS dim_item (
   item_id    BIGINT         COMMENT 'Item ID, primary key. FK target of dwd_order_detail.item_id',
   item_name  STRING         COMMENT 'Item display name',
