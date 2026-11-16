@@ -4,7 +4,6 @@
 --create time: 2026-11-13 10:07:34
 --********************************************************************--
 -- ---------- Conformed dimensions ----------
-DROP TABLE IF EXISTS dim_store;
 CREATE TABLE IF NOT EXISTS dim_store (
   store_id   BIGINT      COMMENT 'Store ID, primary key. FK target of dwd_order_detail.store_id',
   store_name STRING      COMMENT 'Store name',
@@ -15,7 +14,6 @@ CREATE TABLE IF NOT EXISTS dim_store (
 ) COMMENT 'Store conformed dimension. One row per store.'
 LIFECYCLE 1095;
 
-DROP TABLE IF EXISTS dim_member;
 CREATE TABLE IF NOT EXISTS dim_member (
   member_id     BIGINT   COMMENT 'Member ID, primary key. FK target of dwd_order_detail.member_id',
   member_name   STRING   COMMENT 'Member display name',
@@ -26,7 +24,6 @@ CREATE TABLE IF NOT EXISTS dim_member (
 ) COMMENT 'Member conformed dimension. One row per member.'
 LIFECYCLE 1095;
 
-DROP TABLE IF EXISTS dim_item;
 CREATE TABLE IF NOT EXISTS dim_item (
   item_id    BIGINT         COMMENT 'Item ID, primary key. FK target of dwd_order_detail.item_id',
   item_name  STRING         COMMENT 'Item display name',
