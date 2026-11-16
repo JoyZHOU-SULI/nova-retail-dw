@@ -3,7 +3,7 @@
 --author: dataworks_demo2
 --create time: 2026-11-16 17:17:55
 --********************************************************************--
--- dim_store（列名/分区列以 DESC ods_store 实际结果为准）
+-- dim_store
 INSERT OVERWRITE TABLE dim_store
 SELECT store_id, store_name, city, region, channel,
        CAST(open_date AS DATETIME)
