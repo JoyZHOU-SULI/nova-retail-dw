@@ -49,6 +49,18 @@
 					]
 				}
 			}
+		],
+		"dependencies":[
+			{
+				"logicalName":"dim_load:e54f61b0",
+				"depends":[
+					{
+						"logicalName":"ddl_layers:9af78f4c",
+						"type":"Normal",
+						"sourceType":"Manual"
+					}
+				]
+			}
 		]
 	}
 }
