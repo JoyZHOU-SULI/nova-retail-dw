@@ -10,6 +10,10 @@ SELECT
   o.pay_amt                                               AS pay_amt_incl_tax,
   CASE WHEN o.order_status = 'refunded' THEN 1 ELSE 0 END AS is_refunded,
   o.order_status
-FROM nova_dw.nova_orders_sales_order o;
+FROM nova_dw.nova_orders_sales_order o
+WHERE SUBSTR(CAST(o.order_date AS STRING), 1, 10) =
+      CONCAT(SUBSTR('${bizdate}', 1, 4), '-',
+             SUBSTR('${bizdate}', 5, 2), '-',
+             SUBSTR('${bizdate}', 7, 2));
 
 -- SELECT * FROM table_not_exists;
