@@ -4,7 +4,6 @@
 --create time: 2026-11-13 10:07:34
 --********************************************************************--
 -- ---------- Conformed dimensions ----------
-DROP TABLE IF EXISTS dim_store;
 CREATE TABLE IF NOT EXISTS dim_store (
   store_id   BIGINT      COMMENT 'Store ID, primary key. FK target of dwd_order_detail.store_id',
   store_name STRING      COMMENT 'Store name',
