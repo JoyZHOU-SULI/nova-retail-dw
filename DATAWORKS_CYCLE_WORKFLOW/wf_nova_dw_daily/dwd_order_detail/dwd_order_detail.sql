@@ -12,4 +12,4 @@ SELECT
   o.order_status
 FROM nova_dw.nova_orders_sales_order o;
 
-SELECT * FROM table_not_exists;
+-- SELECT * FROM table_not_exists;
