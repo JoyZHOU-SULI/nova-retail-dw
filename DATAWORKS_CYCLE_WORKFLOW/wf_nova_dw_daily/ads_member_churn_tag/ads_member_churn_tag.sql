@@ -51,3 +51,5 @@ LEFT JOIN (
 ) o
   ON o.member_id = m.member_id
 WHERE m.ds = '${bizdate}';
+
+seelct
