@@ -62,6 +62,18 @@
 					]
 				}
 			}
+		],
+		"dependencies":[
+			{
+				"logicalName":"ads_member_churn_tag:c16b0b4b",
+				"depends":[
+					{
+						"logicalName":"dwd_order_detail:4335581a",
+						"type":"Normal",
+						"sourceType":"Manual"
+					}
+				]
+			}
 		]
 	}
 }
