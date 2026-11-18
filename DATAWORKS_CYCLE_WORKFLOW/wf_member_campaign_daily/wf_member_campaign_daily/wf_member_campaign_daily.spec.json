@@ -52,6 +52,23 @@
 					]
 				}
 			}
+		],
+		"dependencies":[
+			{
+				"logicalName":"wf_member_campaign_daily:08c80e6b",
+				"depends":[
+					{
+						"logicalName":"dim_load:e54f61b0",
+						"type":"Normal",
+						"sourceType":"Manual"
+					},
+					{
+						"logicalName":"dwd_order_detail:4335581a",
+						"type":"Normal",
+						"sourceType":"Manual"
+					}
+				]
+			}
 		]
 	}
 }
