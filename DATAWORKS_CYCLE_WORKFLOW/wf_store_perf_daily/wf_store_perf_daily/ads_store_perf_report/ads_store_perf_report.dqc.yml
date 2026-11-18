@@ -1,0 +1,23 @@
+- datasets:
+    - type: Table
+      tables:
+        - ads_store_perf_report
+      filter: "partition:dt=$[yyyymmdd-1]"
+      dataSource:
+        name: nova_dw
+        envType: Prod
+  rules:
+    - identity: rowcount_flux_ads_store_perf_report
+      name: "Table row number. 1 day volatility"
+      templateId: "SYSTEM:table:table_count:flux:1_bizdate"
+      warn:
+        - "when not between -0.02 and 0.02"
+      fail:
+        - "when not between -0.3 and 0.3"
+      severity: High
+      enabled: true
+      collectFailedRows: false
+      description: "rowcount_fluctuation_ads_store_perf_report_30pct: Same rule as dq_nova_dw_daily on dwd_order_detail. The benchmark is the row count of the partition generated yesterday; compares the daily collected row count volatility."
+      tags:
+        - key: "dw:dqc:rule:Timeliness"
+          value: ""
