@@ -1,0 +1,57 @@
+{
+	"version":"2.0.0",
+	"kind":"CycleWorkflow",
+	"spec":{
+		"workflows":[
+			{
+				"logicalName":"wf_store_perf_daily:09510474",
+				"script":{
+					"runtime":{
+						"command":"WORKFLOW"
+					}
+				},
+				"trigger":{
+					"type":"Scheduler",
+					"cron":"00 00 00 * * ?",
+					"startTime":"1970-01-01 00:00:00",
+					"endTime":"9999-01-01 00:00:00",
+					"timezone":"Asia/Shanghai",
+					"delaySeconds":0
+				},
+				"strategy":{
+					"priority":1,
+					"priorityWeightStrategy":"Disabled",
+					"maxInternalConcurrency":0,
+					"timeout":0,
+					"timeoutUnit":"HOURS",
+					"instanceMode":"T+1",
+					"rerunMode":"Allowed",
+					"rerunTimes":3,
+					"rerunInterval":180000,
+					"failureStrategy":"Break",
+					"recurrenceType":"Normal"
+				},
+				"type":"CycleWorkflow",
+				"name":"wf_store_perf_daily",
+				"citable":false,
+				"inputs":{},
+				"outputs":{
+					"nodeOutputs":[
+						{
+							"logicalName":"wf_store_perf_daily:09510474",
+							"artifactType":"NodeOutput",
+							"sourceType":"System",
+							"refTableName":"wf_store_perf_daily"
+						},
+						{
+							"artifactType":"NodeOutput",
+							"sourceType":"System",
+							"data":"nova_retail_prod.wf_store_perf_daily",
+							"refTableName":"wf_store_perf_daily"
+						}
+					]
+				}
+			}
+		]
+	}
+}
