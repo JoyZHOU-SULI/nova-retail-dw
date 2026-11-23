@@ -49,6 +49,18 @@
 					]
 				}
 			}
+		],
+		"dependencies":[
+			{
+				"logicalName":"product_review_ai_sentiment:ec03c1a4",
+				"depends":[
+					{
+						"logicalName":"dim_load:e54f61b0",
+						"type":"Normal",
+						"sourceType":"Manual"
+					}
+				]
+			}
 		]
 	}
 }
