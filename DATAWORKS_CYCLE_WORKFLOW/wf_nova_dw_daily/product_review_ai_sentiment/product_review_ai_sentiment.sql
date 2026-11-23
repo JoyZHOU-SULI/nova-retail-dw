@@ -1,9 +1,3 @@
---Serverless Spark SQL
---********************************************************************--
---author: dataworks_demo2
---create time: 2026-11-23 20:44:17
---Serverless Spark SQL任务只能运行在独享资源组上
---********************************************************************--
 CREATE TABLE product_reviews (
   review_id INT,
   review_text STRING
