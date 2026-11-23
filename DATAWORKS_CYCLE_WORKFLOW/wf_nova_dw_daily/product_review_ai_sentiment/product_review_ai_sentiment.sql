@@ -4,7 +4,6 @@
 --create time: 2026-11-23 20:44:17
 --Serverless Spark SQL任务只能运行在独享资源组上
 --********************************************************************--
--- 建一张商品评价表
 CREATE TABLE product_reviews (
   review_id INT,
   review_text STRING
