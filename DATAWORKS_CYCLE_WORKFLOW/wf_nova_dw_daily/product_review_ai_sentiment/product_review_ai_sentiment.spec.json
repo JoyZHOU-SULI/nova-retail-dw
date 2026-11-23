@@ -22,6 +22,9 @@
 					"language":"spark-sql",
 					"runtime":{
 						"command":"SERVERLESS_SPARK_SQL",
+						"sparkConf":{
+							"spark.emr.serverless.ai.function.enable":true
+						},
 						"cu":"0.25"
 					}
 				},
