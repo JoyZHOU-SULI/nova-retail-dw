@@ -1,0 +1,6 @@
+# BEGIN DATAWORKS RESOURCE LFS
+.gitattributes -filter
+DATAWORKS_CYCLE_WORKFLOW/batch_sync_supplier/batch_sync_supplier.json -filter
+DATAWORKS_CYCLE_WORKFLOW/batch_sync_supplier/batch_sync_supplier.spec.json -filter
+DATAWORKS_CYCLE_WORKFLOW/batch_sync_supplier/dataworks.properties -filter
+# END DATAWORKS RESOURCE LFS
