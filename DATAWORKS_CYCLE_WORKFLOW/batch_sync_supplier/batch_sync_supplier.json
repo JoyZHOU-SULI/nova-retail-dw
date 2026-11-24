@@ -57,11 +57,12 @@
 							"type":"DATE"
 						}
 					],
-					"successOnNoObject":false,
+					"objectRegex":"nova_erp/02_erp_supplier.csv",
 					"skipHeader":"true",
-					"processMode":"lineByLine",
-					"fieldDelimiter":",",
+					"successOnNoObject":false,
 					"encoding":"UTF-8",
+					"fieldDelimiter":",",
+					"processMode":"lineByLine",
 					"fileFormat":"csv",
 					"object":[
 						"nova_erp/02_erp_supplier.csv"
@@ -73,8 +74,8 @@
 			{
 				"stepType":"odps",
 				"parameter":{
-					"isCompress":false,
 					"partition":"pt=${bizdate}",
+					"isCompress":false,
 					"truncate":true,
 					"datasource":"${script.externalCode.steps[1].parameter.datasource}",
 					"tunnelQuota":"default",
